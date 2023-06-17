@@ -31,3 +31,12 @@ function countPositive() {
   }
   document.getElementById("count").innerHTML = ` Số dương: ${count}`;
 }
+// hàm tìm số nhỏ nhất
+function compare(a, b) {
+  return a - b;
+}
+function smallestNumber() {
+  numArray.sort(compare);
+  let smNumber = numArray[0];
+  document.getElementById("smNumber").innerHTML = `Số nhỏ nhất: ${smNumber}`;
+}
