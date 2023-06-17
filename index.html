@@ -32,11 +32,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
+    <link rel="shortcut icon" href="./img/favicon.jpeg" type="image/x-icon" />
     <!-- my css  -->
     <link rel="stylesheet" href="./css/index.css" />
   </head>
-  <!-- Giao diện gần giống như các bài js trước đó nên tái sử dụng là phần lớn,chỉ có thay đổi 1 vài chỗ -->
+  <!-- Giao diện gần giống như các bài js trước đó nên tái sử dụng là phần lớn,-->
   <body>
     <main>
       <div class="container py-5">
@@ -76,9 +76,17 @@
                       <button
                         class="btn bt_feature me-1 mb-1"
                         type="button"
-                        onclick="showNumber() "
+                        onclick="showNumber()"
                       >
                         Thêm số
+                      </button>
+                      <!-- Thêm button xóa só cho tiện nếu có nhu cầu xóa,theo như web mẫu thì nếu muốn xóa 1 số thì phải reload từ đầu -->
+                      <button
+                        class="btn bt_feature me-1 mb-1"
+                        type="button"
+                        onclick="removeNumber()"
+                      >
+                        Xóa số
                       </button>
                     </div>
                     <div class="alert alert-success" role="alert">
@@ -116,15 +124,15 @@
                           <form class="row gy-3 align-items-center px-2">
                             <div class="col-12">
                               <button
+                                onclick="sumPositive()"
                                 class="btn bt_feature me-1 mb-1"
                                 type="button"
-                                onclick="sumPositive()"
                               >
                                 Tính tổng
                               </button>
                             </div>
                             <div class="alert alert-success" role="alert">
-                              ✔️<span id="txtSum"></span>
+                              ✔️<span id="sum"></span>
                             </div>
                           </form>
                         </div>
