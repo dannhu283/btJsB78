@@ -21,3 +21,13 @@ function sumPositive() {
   }
   document.getElementById("sum").innerHTML = `Tổng số dương : ${sumPositive}`;
 }
+// hàm đếm số dương bt2
+function countPositive() {
+  let count = 0;
+  for (let i = 0; i < numArray.length; i++) {
+    if (numArray[i] > 0) {
+      count += 1;
+    }
+  }
+  document.getElementById("count").innerHTML = ` Số dương: ${count}`;
+}
