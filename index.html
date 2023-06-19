@@ -40,7 +40,7 @@
   <body>
     <main>
       <div class="container py-5">
-        <div class="card w-80 mx-auto">
+        <div class="card w-75 mx-auto">
           <div class="bg-holder d-none d-lg-block bg-card"></div>
           <div class="bg_card position-relative p-0">
             <div class="row p-0">
@@ -94,7 +94,7 @@
                     </div>
                   </form>
                   <!-- dùng Accordion của bs5 để tạo giao diện popup -->
-                  <div class="accordion" id="accordionExample">
+                  <div class="accordion mb-4" id="accordionExample">
                     <!-- bài 1  -->
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
@@ -381,7 +381,7 @@
                             <div class="col-12 col-lg-6">
                               <input
                                 type="number"
-                                class="form-control form__input"
+                                class="form-control form_ip"
                                 id="inputIndex1"
                                 placeholder="Nhập số vị trí 1"
                               />
@@ -389,7 +389,7 @@
                             <div class="col-12 col-lg-6">
                               <input
                                 type="number"
-                                class="form-control form__input"
+                                class="form-control form_ip"
                                 id="inputIndex2"
                                 placeholder="Nhập số vị trí 2"
                               />
@@ -541,8 +541,8 @@
                             <div class="col-12 col-lg-6">
                               <input
                                 type="number"
-                                class="form-control form__input"
-                                id="inputFloat"
+                                class="form-control form_ip"
+                                id="number2"
                                 placeholder="Nhập số"
                               />
                             </div>
@@ -550,19 +550,19 @@
                               <button
                                 class="btn bt_feature me-1 mb-1"
                                 type="button"
-                                onclick="getFloat()"
+                                onclick="showNumber2()"
                               >
                                 Thêm số
                               </button>
                             </div>
                             <div class="alert alert-success" role="alert">
-                              ✔️<span id="txtArrayFloat"></span>
+                              ✔️<span id="result2"></span>
                             </div>
                             <div class="col-12 col-lg-6">
                               <button
                                 class="btn bt_feature me-1 mb-1"
                                 type="button"
-                                onclick="countinteger()"
+                                onclick="countInteger()"
                               >
                                 Đếm số nguyên
                               </button>
