@@ -81,6 +81,26 @@ function lastEven() {
 }
 //----------------------------------------------------------------------------------//
 //bt6
+//hàm đổi vị trí 2 giá trị bất kì trong mảng
+function changePlace() {
+  let index1 = +document.getElementById("index1").value;
+  let index2 = +document.getElementById("index2").value;
+  if (
+    index1 < 0 ||
+    index1 > numArray.length ||
+    index2 < 0 ||
+    index2 > numArray.length
+  ) {
+    document.getElementById("place").innerHTML = `Vị trí cần đổi không hợp lệ`;
+  } else {
+    let temporary = numArray[index1];
+    numArray[index1] = numArray[index2];
+    numArray[index2] = temporary;
+    document.getElementById(
+      "place"
+    ).innerHTML = ` Mảng sau khi đổi chỗ: ${numArray} `;
+  }
+}
 //----------------------------------------------------------------------------------//
 //bt7
 function sort() {
