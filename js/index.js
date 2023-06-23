@@ -11,18 +11,19 @@ function removeNumber() {
   numArray.pop();
   document.getElementById("result").innerHTML = numArray;
 }
-//-----------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------
 //hàm tính tổng số dương của bt1
 function sumPositive() {
   let sumPositive = 0;
   for (let i = 0; i < numArray.length; i++) {
+    //kiểm tra nếu phần tử là số dương thì cộng dồn vào tổng rồi xuất kết quả
     if (numArray[i] > 0) {
       sumPositive += numArray[i];
     }
   }
   document.getElementById("sum").innerHTML = `Tổng số dương : ${sumPositive}`;
 }
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
 // hàm đếm số dương bt2
 function countPositive() {
   let count = 0;
@@ -33,7 +34,7 @@ function countPositive() {
   }
   document.getElementById("count").innerHTML = ` Số dương: ${count}`;
 }
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
 // hàm tìm số nhỏ nhất bt3
 //hàm để đưa vào sort để săp xếp giá trị từ thấp đến cao
 function compare(a, b) {
@@ -45,11 +46,12 @@ function smallestNumber() {
   let smNumber = numArray[0];
   document.getElementById("smNumber").innerHTML = `Số nhỏ nhất: ${smNumber}`;
 }
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
 //hàm tìm số dương nhỏ nhất bt 4
 function smallestPositive() {
   let newArray = [];
   for (let i = 0; i <= numArray.length; i++) {
+    //tìm số >0 và gắn vào mảng mới để sort lấy giá trị nhỏ nhất
     if (numArray[i] > 0) {
       newArray.push(numArray[i]);
     }
@@ -66,7 +68,7 @@ function smallestPositive() {
     ).innerHTML = `Không có số dương trong mảng`;
   }
 }
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
 //hàm tìm số chẵn cuối cùng bt5
 function lastEven() {
   let numberEven = 0;
@@ -79,9 +81,9 @@ function lastEven() {
     "numberEven"
   ).innerHTML = `Số chẵn cuối cùng: ${numberEven}`;
 }
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
 //bt6
-//hàm đổi vị trí 2 giá trị bất kì trong mảng
+//hàm đổi vị trí 2 giá trị bất kì trong mảng,gán giá trị như gợi ý
 function changePlace() {
   let index1 = +document.getElementById("index1").value;
   let index2 = +document.getElementById("index2").value;
@@ -101,7 +103,7 @@ function changePlace() {
     ).innerHTML = ` Mảng sau khi đổi chỗ: ${numArray} `;
   }
 }
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
 //bt7
 function sort() {
   numArray.sort(compare);
@@ -109,9 +111,48 @@ function sort() {
     "sortAscending"
   ).innerHTML = `Mảng sau khi sắp xếp : ${numArray}`;
 }
-//----------------------------------------------------------------------------------//
-// //hàm tìm số nguyên tố đầu tiên bt8
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
+// //bt8
+//hàm kiểm tra số nguyên tố
+function isPrime(n) {
+  if (n < 2) {
+    return false;
+  }
+  if (n === 2) {
+    return true;
+  }
+  if (n % 2 === 0) {
+    return false;
+  }
+  for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+//hàm tìm số nguyên tố
+function fisrtPrime() {
+  // tạo biến để nhận giá trị snt đầu khi tìm khi trong mảng
+  let fisrtPrime = 0;
+  for (let i = 0; i <= numArray.length; i++) {
+    if (isPrime(numArray[i])) {
+      fisrtPrime = numArray[i];
+    }
+    break;
+  }
+  //kiểm tra nếu có giá trị thì sẽ lớn hơn 0 thì xuất ra kết quả và ngược lại
+  if (fisrtPrime > 0) {
+    document.getElementById(
+      "prime"
+    ).innerHTML = `Số nguyên tố đầu tiên : ${fisrtPrime}`;
+  } else {
+    document.getElementById(
+      "prime"
+    ).innerHTML = `Không có số nguyên tố trong mảng`;
+  }
+}
+//----------------------------------------------------------------------------------
 //đếm số nguyên bt 9
 let array = [];
 function showNumber2() {
@@ -131,7 +172,7 @@ function countInteger() {
   }
   document.getElementById("integer").innerHTML = `Số nguyên: ${count}`;
 }
-//----------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------
 //bt10
 function compareQuantity() {
   //tạo biến đếm số âm và dương
@@ -153,4 +194,3 @@ function compareQuantity() {
     document.getElementById("compare").innerHTML = `Số âm = Số dương`;
   }
 }
-//*************còn 6 8 và mở public
