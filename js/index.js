@@ -41,9 +41,10 @@ function compare(a, b) {
   return a - b;
 }
 function smallestNumber() {
-  numArray.sort(compare);
+  let newArray = numArray;
+  newArray.sort(compare);
   //lấy giá trị đầu tiên do trước đó đã sort
-  let smNumber = numArray[0];
+  let smNumber = newArray[0];
   document.getElementById("smNumber").innerHTML = `Số nhỏ nhất: ${smNumber}`;
 }
 //----------------------------------------------------------------------------------
