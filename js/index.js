@@ -139,8 +139,8 @@ function fisrtPrime() {
   for (let i = 0; i <= numArray.length; i++) {
     if (isPrime(numArray[i])) {
       fisrtPrime = numArray[i];
+      break;
     }
-    break;
   }
   //kiểm tra nếu có giá trị thì sẽ lớn hơn 0 thì xuất ra kết quả và ngược lại
   if (fisrtPrime > 0) {
